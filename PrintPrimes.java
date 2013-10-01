@@ -22,17 +22,18 @@ public class PrintPrimes {
         printPrimes.printPrimes();
     }
 
-    public void calculatePrimes() {
+    private void calculatePrimes() {
         /* Two is the only even prime. All other prime numbers are odd.
          * To simplify the code, we simply add 2 as a prime number, and
          * delegate the task of finding all odd prime numbers to a helper
          * function.
+         * --------------- Changed to:
+         * 2 is the only even prime. To simplify the code, we add 2 as a 
+         * prime number in the listOfPrimes list. We incorporate the information
+         * that all the rest of the prime numbers are even into their search.
          */
-        listOfPrimes[1] = 2;
-        calculateOddPrimes();
-    }
-
-    private void calculateOddPrimes() {
+        listOfPrimes[0] = 2;
+        
         boolean JPRIME;
         int N;
         int MULT[] = new int[ORDMAX + 1];
