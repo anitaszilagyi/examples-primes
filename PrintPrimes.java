@@ -32,35 +32,35 @@ public class PrintPrimes {
         calculateOddPrimes();
     }
 
-  private void calculateOddPrimes() {
-      boolean JPRIME;
-      int N;
-      int MULT[] = new int[ORDMAX + 1];
+    private void calculateOddPrimes() {
+        boolean JPRIME;
+        int N;
+        int MULT[] = new int[ORDMAX + 1];
 
-      int J = 1;
-      int ORD = 2;
-      int SQUARE = 9;
+        int J = 1;
+        int ORD = 2;
+        int SQUARE = 9;
 
-      for(int primesFoundSoFar = 1; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
-        do {
-          J = J + 2;
-          if (J == SQUARE) {
-            ORD = ORD + 1;
-            SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
-            MULT[ORD - 1] = J;
-          }
-          N = 2;
-          JPRIME = true;
-          while (N < ORD && JPRIME) {
-            while (MULT[N] < J)
-              MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
-            if (MULT[N] == J)
-              JPRIME = false;
-            N = N + 1;
-          }
-        } while (!JPRIME);
-        listOfPrimes[primesFoundSoFar] = J;
-      }
+        for(int primesFoundSoFar = 1; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
+            do {
+                J = J + 2;
+                if (J == SQUARE) {
+                    ORD = ORD + 1;
+                    SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
+                    MULT[ORD - 1] = J;
+                }
+                N = 2;
+                JPRIME = true;
+                while (N < ORD && JPRIME) {
+                    while (MULT[N] < J)
+                        MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
+                        if (MULT[N] == J)
+                            JPRIME = false;
+                        N = N + 1;
+                }
+            } while (!JPRIME);
+            listOfPrimes[primesFoundSoFar] = J;
+        }
     }
 
     public void printPrimes() {
