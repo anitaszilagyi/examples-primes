@@ -1,10 +1,10 @@
 public class PrintPrimes {
-  int numberOfPrimes;
-  int RR;
-  int CC;
-  int WW;
-  int ORDMAX;
-  int listOfPrimes[];
+    int numberOfPrimes;
+    int RR;
+    int CC;
+    int WW;
+    int ORDMAX;
+    int listOfPrimes[];
 
   public PrintPrimes(int numberOfPrimes, int RR, int CC, int WW, int ORDMAX) {
     this.numberOfPrimes   = numberOfPrimes;
