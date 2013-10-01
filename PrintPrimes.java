@@ -1,4 +1,5 @@
 public class PrintPrimes {
+	
     int numberOfPrimes;
     int RR;
     int CC;
@@ -7,15 +8,14 @@ public class PrintPrimes {
     int listOfPrimes[];
 
     public PrintPrimes(int numberOfPrimes, int RR, int CC, int WW, int ORDMAX) {
-        this.numberOfPrimes   = numberOfPrimes;
-        this.RR  = RR;
-        this.CC  = CC;
-        this.WW  = WW;
+        this.numberOfPrimes = numberOfPrimes;
+        this.RR = RR;
+        this.CC = CC;
+        this.WW = WW;
         this.ORDMAX = ORDMAX;
         this.listOfPrimes = new int[numberOfPrimes + 1];
     }
-
-
+    
     public static void main(String[] args) {
         PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
         printPrimes.calculatePrimes();
@@ -41,7 +41,7 @@ public class PrintPrimes {
         int ORD = 2;
         int SQUARE = 9;
 
-        for(int primesFoundSoFar = 1; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
+        for (int primesFoundSoFar = 1; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
             do {
                 J = J + 2;
                 if (J == SQUARE) {
@@ -71,7 +71,7 @@ public class PrintPrimes {
                                " Prime Numbers --- Page " + PAGENUMBER);
             System.out.println("");
             for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++) {
-                for (int C = 0; C < CC;C++)
+                for (int C = 0; C < CC; C++)
                     if (ROWOFFSET + C * RR <= numberOfPrimes)
                         System.out.format("%10d", listOfPrimes[ROWOFFSET + C * RR]);
                 System.out.println("");
@@ -82,5 +82,6 @@ public class PrintPrimes {
         }
     }
 }
+
 
 					 
