@@ -67,18 +67,18 @@ public class PrintPrimes {
         int PAGENUMBER = 1;
         int PAGEOFFSET = 1;
         while (PAGEOFFSET <= numberOfPrimes) {
-          System.out.println("The First " + numberOfPrimes +
+            System.out.println("The First " + numberOfPrimes +
                                " Prime Numbers --- Page " + PAGENUMBER);
-          System.out.println("");
-          for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++){
-            for (int C = 0; C < CC;C++)
-              if (ROWOFFSET + C * RR <= numberOfPrimes)
-                System.out.format("%10d", listOfPrimes[ROWOFFSET + C * RR]);
             System.out.println("");
-          }
-          System.out.println("\f");
-          PAGENUMBER = PAGENUMBER + 1;
-          PAGEOFFSET = PAGEOFFSET + RR * CC;
+            for (int ROWOFFSET = PAGEOFFSET; ROWOFFSET < PAGEOFFSET + RR; ROWOFFSET++) {
+                for (int C = 0; C < CC;C++)
+                    if (ROWOFFSET + C * RR <= numberOfPrimes)
+                        System.out.format("%10d", listOfPrimes[ROWOFFSET + C * RR]);
+                System.out.println("");
+            }
+            System.out.println("\f");
+            PAGENUMBER = PAGENUMBER + 1;
+            PAGEOFFSET = PAGEOFFSET + RR * CC;
         }
     }
 }
