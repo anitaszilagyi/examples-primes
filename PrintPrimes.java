@@ -40,14 +40,14 @@ public class PrintPrimes {
 
         int currentOddNumber = 1;
         int ORD = 2;
-        int SQUARE = 9;
+        int nearestSquare = 9;
 	int i;
         for (i = 2; i <= numberOfPrimes; i++) {
             do {
                 currentOddNumber = currentOddNumber + 2;
-                if (currentOddNumber == SQUARE) {
+                if (currentOddNumber == nearestSquare) {
                     ORD = ORD + 1;
-                    SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
+                    nearestSquare = listOfPrimes[ORD] * listOfPrimes[ORD];
                     MULT[ORD - 1] = currentOddNumber;
                 }
                 N = 2;
@@ -59,6 +59,7 @@ public class PrintPrimes {
                         isPrime = false;
                     N = N + 1;
                 }
+                
             } while (!isPrime);
             listOfPrimes[i] = currentOddNumber;
         }
