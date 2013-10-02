@@ -1,4 +1,9 @@
 public class PrintPrimes {
+
+    public static final int NUMBER_OF_PRIMES = 300;
+    public static final int MAX_ROWS = 50;
+    public static final int MAX_COLUMNS = 4;
+    public static final int ORD_MAX = 30;
 	
     int numberOfPrimes;
     int maxRowsPerPage;
@@ -15,7 +20,7 @@ public class PrintPrimes {
     }
     
     public static void main(String[] args) {
-        PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
+        PrintPrimes printPrimes = new PrintPrimes(NUMBER_OF_PRIMES, MAX_ROWS, MAX_COLUMNS, ORD_MAX);
         printPrimes.calculatePrimes();
         printPrimes.printPrimes();
     }
