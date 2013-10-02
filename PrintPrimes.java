@@ -42,14 +42,14 @@ public class PrintPrimes {
         int MULT[] = new int[ORDMAX + 1];
 
         int currentOddNumber = 1;
-        int ORD = 2;
+        int indexOfPrimeToSquare = 2;
         int nearestSquare = 9;
 	int i;
         for (i = 2; i <= numberOfPrimes; i++) {
             do {
                 currentOddNumber = currentOddNumber + 2;
                 if (currentOddNumber == nearestSquare) {
-                    ORD = ORD + 1;
+                    indexOfPrimeToSquare++;
                     nearestSquare = listOfPrimes[ORD] * listOfPrimes[ORD];
                     MULT[ORD - 1] = currentOddNumber;
                 }
