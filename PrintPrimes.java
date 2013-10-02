@@ -34,33 +34,33 @@ public class PrintPrimes {
          */
         listOfPrimes[1] = 2;
         
-        boolean JPRIME;
+        boolean isPrime;
         int N;
         int MULT[] = new int[ORDMAX + 1];
 
-        int J = 1;
+        int currentOddNumber = 1;
         int ORD = 2;
         int SQUARE = 9;
 	int i;
         for (i = 2; i <= numberOfPrimes; i++) {
             do {
-                J = J + 2;
-                if (J == SQUARE) {
+                currentOddNumber = currentOddNumber + 2;
+                if (currentOddNumber == SQUARE) {
                     ORD = ORD + 1;
                     SQUARE = listOfPrimes[ORD] * listOfPrimes[ORD];
-                    MULT[ORD - 1] = J;
+                    MULT[ORD - 1] = currentOddNumber;
                 }
                 N = 2;
-                JPRIME = true;
-                while (N < ORD && JPRIME) {
-                    while (MULT[N] < J)
+                isPrime = true;
+                while (N < ORD && isPrime) {
+                    while (MULT[N] < currentOddNumber)
                         MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
-                    if (MULT[N] == J)
-                        JPRIME = false;
+                    if (MULT[N] == currentOddNumber)
+                        isPrime = false;
                     N = N + 1;
                 }
-            } while (!JPRIME);
-            listOfPrimes[i] = J;
+            } while (!isPrime);
+            listOfPrimes[i] = currentOddNumber;
         }
     }
 
@@ -83,3 +83,4 @@ public class PrintPrimes {
         }
     }
 }
+
