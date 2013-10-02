@@ -31,6 +31,12 @@ public class PrintPrimes {
     	return nextOddNumber;
     }
     
+    public static int calculateSquare(int numberToSquare) {
+    	int square = 0;
+    	square = numberToSquare * numberToSquare;
+    	return square;
+    }
+    
     private int calculateNextOddMultiple(int oddBaseNumber, int multiplicator) {
     	
     	int nextOddMultiple = 0;
@@ -63,7 +69,7 @@ public class PrintPrimes {
                 currentOddNumber = calculateNextOddNumber(currentOddNumber);
                 if (currentOddNumber == nearestSquare) {
                     indexOfPrimeToSquare++;
-                    nearestSquare = listOfPrimes[indexOfPrimeToSquare] * listOfPrimes[indexOfPrimeToSquare];
+                    nearestSquare = calculateSquare(listOfPrimes[indexOfPrimeToSquare]);
                     multiplesOfPrimes[indexOfPrimeToSquare - 1] = currentOddNumber;
                 }
                 j = 2;
