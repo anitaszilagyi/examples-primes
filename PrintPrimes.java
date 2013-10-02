@@ -55,9 +55,9 @@ public class PrintPrimes {
                 while (N < ORD && JPRIME) {
                     while (MULT[N] < J)
                         MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
-                        if (MULT[N] == J)
-                            JPRIME = false;
-                        N = N + 1;
+                    if (MULT[N] == J)
+                        JPRIME = false;
+                    N = N + 1;
                 }
             } while (!JPRIME);
             listOfPrimes[i] = J;
