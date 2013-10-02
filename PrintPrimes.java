@@ -24,6 +24,14 @@ public class PrintPrimes {
         printPrimes.calculatePrimes();
         printPrimes.printPrimes();
     }
+    
+    private int calculateNextOddMultiple(int oddBaseNumber, int multiplicator) {
+    	
+    	int nextOddMultiple = 0;
+    	nextOddMultiple = oddBaseNumber + 2 * multiplicator;
+    	
+    	return nextOddMultiple;
+    }
 
     private void calculatePrimes() {
         /* Two is the only even prime. All other prime numbers are odd.
@@ -56,7 +64,7 @@ public class PrintPrimes {
                 isPrime = true;
                 while ((j < indexOfPrimeToSquare) && isPrime) {
                     while (MULT[j] < currentOddNumber)
-                        MULT[j] = MULT[j] + 2 * listOfPrimes[j];
+                    	MULT[j] = calculateNextOddMultiple(MULT[j], listOfPrimes[j]);
                     if (MULT[j] == currentOddNumber)
                         isPrime = false;
                     j++;
