@@ -32,7 +32,7 @@ public class PrintPrimes {
          * prime number in the listOfPrimes list. We incorporate the information
          * that all the rest of the prime numbers are even into their search.
          */
-        listOfPrimes[0] = 2;
+        listOfPrimes[1] = 2;
         
         boolean JPRIME;
         int N;
