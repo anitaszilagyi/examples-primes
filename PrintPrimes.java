@@ -7,6 +7,7 @@ public class PrintPrimes {
     
     public static final int FIRST_ODD_NUMBER = 1;
     public static final int FIRST_PRIME = 2;
+    public static final int INDEX_OF_FIRST_PRIME = 1;
     public static final int FIRST_SQUARE = 9;
 	
     int numberOfPrimes;
@@ -70,13 +71,13 @@ public class PrintPrimes {
          * prime number in the listOfPrimes list. We incorporate the information
          * that all the rest of the prime numbers are even into their search.
          */
-        listOfPrimes[1] = 2;
+        listOfPrimes[INDEX_OF_FIRST_PRIME] = FIRST_PRIME;
         
         boolean isPrime;
         int multiplesOfPrimes[] = new int[ORDMAX + 1];
 
         int currentOddNumber = FIRST_ODD_NUMBER;
-        int indexOfPrimeToSquare = FIRST_PRIME;
+        int indexOfPrimeToSquare = INDEX_OF_FIRST_PRIME + 1;
         int nearestSquare = FIRST_SQUARE;
 	int i, j;
         for (i = 2; i <= numberOfPrimes; i++) {
