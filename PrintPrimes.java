@@ -50,12 +50,12 @@ public class PrintPrimes {
                 currentOddNumber = currentOddNumber + 2;
                 if (currentOddNumber == nearestSquare) {
                     indexOfPrimeToSquare++;
-                    nearestSquare = listOfPrimes[ORD] * listOfPrimes[ORD];
-                    MULT[ORD - 1] = currentOddNumber;
+                    nearestSquare = listOfPrimes[indexOfPrimeToSquare] * listOfPrimes[indexOfPrimeToSquare];
+                    MULT[indexOfPrimeToSquare - 1] = currentOddNumber;
                 }
                 N = 2;
                 isPrime = true;
-                while (N < ORD && isPrime) {
+                while ((N < indexOfPrimeToSquare) && isPrime) {
                     while (MULT[N] < currentOddNumber)
                         MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
                     if (MULT[N] == currentOddNumber)
