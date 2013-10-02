@@ -38,13 +38,12 @@ public class PrintPrimes {
         listOfPrimes[1] = 2;
         
         boolean isPrime;
-        int N;
         int MULT[] = new int[ORDMAX + 1];
 
         int currentOddNumber = 1;
         int indexOfPrimeToSquare = 2;
         int nearestSquare = 9;
-	int i;
+	int i, j;
         for (i = 2; i <= numberOfPrimes; i++) {
             do {
                 currentOddNumber = currentOddNumber + 2;
@@ -53,14 +52,14 @@ public class PrintPrimes {
                     nearestSquare = listOfPrimes[indexOfPrimeToSquare] * listOfPrimes[indexOfPrimeToSquare];
                     MULT[indexOfPrimeToSquare - 1] = currentOddNumber;
                 }
-                N = 2;
+                j = 2;
                 isPrime = true;
                 while ((N < indexOfPrimeToSquare) && isPrime) {
                     while (MULT[N] < currentOddNumber)
                         MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
                     if (MULT[N] == currentOddNumber)
                         isPrime = false;
-                    N = N + 1;
+                    j++;
                 }
                 
             } while (!isPrime);
