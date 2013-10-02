@@ -4,6 +4,10 @@ public class PrintPrimes {
     public static final int MAX_ROWS = 50;
     public static final int MAX_COLUMNS = 4;
     public static final int ORD_MAX = 30;
+    
+    public static final int FIRST_ODD_NUMBER = 1;
+    public static final int FIRST_PRIME = 2;
+    public static final int FIRST_SQUARE = 9;
 	
     int numberOfPrimes;
     int maxRowsPerPage;
@@ -71,9 +75,9 @@ public class PrintPrimes {
         boolean isPrime;
         int multiplesOfPrimes[] = new int[ORDMAX + 1];
 
-        int currentOddNumber = 1;
-        int indexOfPrimeToSquare = 2;
-        int nearestSquare = 9;
+        int currentOddNumber = FIRST_ODD_NUMBER;
+        int indexOfPrimeToSquare = FIRST_PRIME;
+        int nearestSquare = FIRST_SQUARE;
 	int i, j;
         for (i = 2; i <= numberOfPrimes; i++) {
             do {
@@ -86,7 +90,6 @@ public class PrintPrimes {
                     nearestSquare = calculateSquare(listOfPrimes[indexOfPrimeToSquare]);
                     isPrime = false;
                 }
-
                 while ((j < indexOfPrimeToSquare) && isPrime) {
                     while (multiplesOfPrimes[j] < currentOddNumber)
                     	multiplesOfPrimes[j] = calculateNextOddMultiple(multiplesOfPrimes[j], listOfPrimes[j]);
@@ -94,7 +97,6 @@ public class PrintPrimes {
                         isPrime = false;
                     j++;
                 }
-                
             } while (!isPrime);
             listOfPrimes[i] = currentOddNumber;
         }
