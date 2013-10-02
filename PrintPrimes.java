@@ -54,10 +54,10 @@ public class PrintPrimes {
                 }
                 j = 2;
                 isPrime = true;
-                while ((N < indexOfPrimeToSquare) && isPrime) {
-                    while (MULT[N] < currentOddNumber)
-                        MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
-                    if (MULT[N] == currentOddNumber)
+                while ((j < indexOfPrimeToSquare) && isPrime) {
+                    while (MULT[j] < currentOddNumber)
+                        MULT[j] = MULT[j] + 2 * listOfPrimes[j];
+                    if (MULT[j] == currentOddNumber)
                         isPrime = false;
                     j++;
                 }
