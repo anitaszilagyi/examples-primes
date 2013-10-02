@@ -41,8 +41,8 @@ public class PrintPrimes {
         int J = 1;
         int ORD = 2;
         int SQUARE = 9;
-
-        for (int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
+	int i;
+        for (i = 2; i <= numberOfPrimes; i++) {
             do {
                 J = J + 2;
                 if (J == SQUARE) {
@@ -60,7 +60,7 @@ public class PrintPrimes {
                         N = N + 1;
                 }
             } while (!JPRIME);
-            listOfPrimes[primesFoundSoFar] = J;
+            listOfPrimes[i] = J;
         }
     }
 
