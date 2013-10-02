@@ -25,13 +25,13 @@ public class PrintPrimes {
         printPrimes.printPrimes();
     }
     
-    public static int calculateNextOddNumber(int currentOddNumber) {
+    private static int calculateNextOddNumber(int currentOddNumber) {
     	int nextOddNumber = 0;
     	nextOddNumber = currentOddNumber + 2;
     	return nextOddNumber;
     }
     
-    public static int calculateSquare(int numberToSquare) {
+    private static int calculateSquare(int numberToSquare) {
     	int square = 0;
     	square = numberToSquare * numberToSquare;
     	return square;
@@ -43,6 +43,17 @@ public class PrintPrimes {
     	nextOddMultiple = oddBaseNumber + 2 * multiplicator;
     	
     	return nextOddMultiple;
+    }
+    
+    private static int calculatePrimesPrintedSoFar(int rowsPrinted, int colsPrinted) {
+    	int primesPrintedSoFar = row + col * maxRowsPerPage;
+    	return primesPrintedSoFar;
+    }
+    
+    private static boolean isEndReached(int primesPrintedSoFar) {
+    	 boolean bool = false;
+    	 bool = (primesPrintedSoFar <= numberOfPrimes);
+    	 return bool;
     }
 
     private void calculatePrimes() {
@@ -91,20 +102,23 @@ public class PrintPrimes {
 
     public void printPrimes() {
         int pageNumber = 1;
-        int pageOffset = 1;
-        while (pageOffset <= numberOfPrimes) {
-            System.out.println("The First " + numberOfPrimes +
-                               " Prime Numbers --- Page " + pageNumber);
+        int rowOffset = 1;
+        int primesPrintedSoFar = 0;
+        String pageTitle = "The First " + numberOfPrimes + " Prime Numbers --- Page ";
+        while (rowOffset <= numberOfPrimes) {
+            System.out.println(pageTitle + pageNumber);
             System.out.println("");
-            for (int row = pageOffset; row < pageOffset + maxRowsPerPage; row++) {
-                for (int col = 0; col < maxColumnsPerPage; col++)
-                    if (row + col * maxRowsPerPage <= numberOfPrimes)
-                        System.out.format("%10d", listOfPrimes[row + col * maxRowsPerPage]);
+            for (int row = rowOffset; row < rowOffset + maxRowsPerPage; row++) {
+                for (int col = 0; col < maxColumnsPerPage; col++) {
+                    primesPrintedSoFar = calculatePrimesPrintedSoFar(row, col);	
+                    if (isEndReached(primesPrintedSoFar))
+                        System.out.format("%10d", listOfPrimes[primesPrintedSoFar]);
                 System.out.println("");
+                }
             }
             System.out.println("\f");
-            pageNumber = pageNumber + 1;
-            pageOffset = pageOffset + maxRowsPerPage * maxColumnsPerPage;
+            pageNumber++;
+            rowOffset = rowOffset + maxRowsPerPage * maxColumnsPerPage;
         }
     }
 }
