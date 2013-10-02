@@ -66,14 +66,16 @@ public class PrintPrimes {
 	int i, j;
         for (i = 2; i <= numberOfPrimes; i++) {
             do {
+            	j = 2;
+                isPrime = true;
                 currentOddNumber = calculateNextOddNumber(currentOddNumber);
                 if (currentOddNumber == nearestSquare) {
+                    multiplesOfPrimes[indexOfPrimeToSquare] = currentOddNumber;
                     indexOfPrimeToSquare++;
                     nearestSquare = calculateSquare(listOfPrimes[indexOfPrimeToSquare]);
-                    multiplesOfPrimes[indexOfPrimeToSquare - 1] = currentOddNumber;
+                    isPrime = false;
                 }
-                j = 2;
-                isPrime = true;
+
                 while ((j < indexOfPrimeToSquare) && isPrime) {
                     while (multiplesOfPrimes[j] < currentOddNumber)
                     	multiplesOfPrimes[j] = calculateNextOddMultiple(multiplesOfPrimes[j], listOfPrimes[j]);
