@@ -25,6 +25,12 @@ public class PrintPrimes {
         printPrimes.printPrimes();
     }
     
+    public static int calculateNextOddNumber(int currentOddNumber) {
+    	int nextOddNumber = 0;
+    	nextOddNumber = currentOddNumber + 2;
+    	return nextOddNumber;
+    }
+    
     private int calculateNextOddMultiple(int oddBaseNumber, int multiplicator) {
     	
     	int nextOddMultiple = 0;
@@ -54,7 +60,7 @@ public class PrintPrimes {
 	int i, j;
         for (i = 2; i <= numberOfPrimes; i++) {
             do {
-                currentOddNumber = currentOddNumber + 2;
+                currentOddNumber = calculateNextOddNumber(currentOddNumber);
                 if (currentOddNumber == nearestSquare) {
                     indexOfPrimeToSquare++;
                     nearestSquare = listOfPrimes[indexOfPrimeToSquare] * listOfPrimes[indexOfPrimeToSquare];
