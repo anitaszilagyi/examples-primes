@@ -113,8 +113,8 @@ public class PrintPrimes {
                     primesPrintedSoFar = calculatePrimesPrintedSoFar(row, col);	
                     if (isEndReached(primesPrintedSoFar))
                         System.out.format("%10d", listOfPrimes[primesPrintedSoFar]);
-                System.out.println("");
                 }
+                System.out.println("");
             }
             System.out.println("\f");
             pageNumber++;
