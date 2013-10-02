@@ -45,12 +45,12 @@ public class PrintPrimes {
     	return nextOddMultiple;
     }
     
-    private static int calculatePrimesPrintedSoFar(int rowsPrinted, int colsPrinted) {
-    	int primesPrintedSoFar = row + col * maxRowsPerPage;
+    private int calculatePrimesPrintedSoFar(int rowsPrinted, int colsPrinted) {
+    	int primesPrintedSoFar = rowsPrinted + colsPrinted * maxRowsPerPage;
     	return primesPrintedSoFar;
     }
     
-    private static boolean isEndReached(int primesPrintedSoFar) {
+    private boolean isEndReached(int primesPrintedSoFar) {
     	 boolean bool = false;
     	 bool = (primesPrintedSoFar <= numberOfPrimes);
     	 return bool;
