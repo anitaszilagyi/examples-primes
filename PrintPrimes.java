@@ -3,7 +3,7 @@ public class PrintPrimes {
     public static final int NUMBER_OF_PRIMES = 300;
     public static final int MAX_ROWS = 50;
     public static final int MAX_COLUMNS = 4;
-    public static final int ORD_MAX = 30;
+    public static final int MAX_SQUARES_OF_PRIMES = 30;
     
     public static final int FIRST_ODD_NUMBER = 1;
     public static final int FIRST_PRIME = 2;
@@ -13,19 +13,19 @@ public class PrintPrimes {
     int numberOfPrimes;
     int maxRowsPerPage;
     int maxColumnsPerPage;
-    int ORDMAX;
+    int maxSquares;
     int listOfPrimes[];
 
-    public PrintPrimes(int numberOfPrimes, int maxRowsPerPage, int maxColumnsPerPage, int ORDMAX) {
+    public PrintPrimes(int numberOfPrimes, int maxRowsPerPage, int maxColumnsPerPage, int maxSquares) {
         this.numberOfPrimes = numberOfPrimes;
         this.maxRowsPerPage = maxRowsPerPage;
         this.maxColumnsPerPage = maxColumnsPerPage;
-        this.ORDMAX = ORDMAX;
+        this.maxSquares = maxSquares;
         this.listOfPrimes = new int[numberOfPrimes + 1];
     }
     
     public static void main(String[] args) {
-        PrintPrimes printPrimes = new PrintPrimes(NUMBER_OF_PRIMES, MAX_ROWS, MAX_COLUMNS, ORD_MAX);
+        PrintPrimes printPrimes = new PrintPrimes(NUMBER_OF_PRIMES, MAX_ROWS, MAX_COLUMNS, MAX_SQUARES_OF_PRIMES);
         printPrimes.calculatePrimes();
         printPrimes.printPrimes();
     }
@@ -74,7 +74,7 @@ public class PrintPrimes {
         listOfPrimes[INDEX_OF_FIRST_PRIME] = FIRST_PRIME;
         
         boolean isPrime;
-        int multiplesOfPrimes[] = new int[ORDMAX + 1];
+        int multiplesOfPrimes[] = new int[MAX_SQUARES_OF_PRIMES + 1];
 
         int currentOddNumber = FIRST_ODD_NUMBER;
         int indexOfPrimeToSquare = INDEX_OF_FIRST_PRIME + 1;
