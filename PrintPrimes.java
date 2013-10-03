@@ -29,7 +29,7 @@ public class PrintPrimes {
         printPrimes.calculatePrimes();
         printPrimes.printPrimes();
     }
-    
+     
     private static int calculateNextOddNumber(int currentOddNumber) {
     	int nextOddNumber = 0;
     	nextOddNumber = currentOddNumber + 2;
